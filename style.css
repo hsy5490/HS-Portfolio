@@ -314,7 +314,7 @@ h2 {
 .work__projects{
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content:left;
 }
 
 .project{
