@@ -206,7 +206,7 @@ input{
 }
 
 .major__icon:hover i {
-  color: var(--color-pink);
+  color: var(--color-orange);
   transform: rotate(-30deg) scale(1.2);
 }
 
@@ -355,9 +355,9 @@ input{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 23%;
+  width: 30%;
   height: 250px;
-  margin: 2px;
+  margin: 4px;
   background-color: var(--color-light-white);
 }
 
@@ -636,15 +636,11 @@ input{
     /* width: 50%; */
   }
 
-  .project:not(:last-child) {
+  .project{
     width: 40%;
     flex-grow: 1;
   }
 
-  .project:last-child {
-    width: 49.5%;
-    /* flex-grow: 1; */
-  }
 
   .testmonial__avatar {
     width: 50px;
