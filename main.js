@@ -13,15 +13,6 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// 탑 스크롤 효과;
-document.querySelector(".top").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-    });
-});
 
 
 function scrollIntoView(selector) {
@@ -55,6 +46,39 @@ const home = document.querySelector(".home__container");
 const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-   home.style.opacity=1-window.scrollY/homeHeight;
-   console.log(1-window.scrollY/homeHeight)
+    home.style.opacity = 1 - window.scrollY / homeHeight;
+    console.log(1 - window.scrollY / homeHeight)
 });
+
+// 탑 스크롤 효과1;
+document.querySelector(".top").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+    });
+});
+
+//projects
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter === null) {
+        return;
+    }
+
+    projectContainer.classList.add('anim-out')
+    setTimeout(() => {
+        projects.forEach((project) => {
+            if (filter === '*' || filter === project.dataset.type) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+})
