@@ -24,13 +24,17 @@ document.querySelector(".top").addEventListener("click", (e) => {
 });
 
 
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
 
 //   Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar_menu');
 navbarMenu.addEventListener('click', (event) => {
-    const target=event.target;
-    const link=target.dataset.link;
-    if(link===null){
+    const target = event.target;
+    const link = target.dataset.link;
+    if (link === null) {
         return;
     }
 
@@ -41,12 +45,16 @@ navbarMenu.addEventListener('click', (event) => {
 
 })
 
-const button=document.querySelector(".home__contact");
-button.addEventListener("click", ()=>{
+const button = document.querySelector(".home__contact");
+button.addEventListener("click", () => {
     scrollIntoView('#contact')
 });
 
-function scrollIntoView(selector){
-    const scrollTo=document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:'smooth'});
-}
+// Make home slowly fade to transparent as the window scrolls down
+const home = document.querySelector(".home__container");
+const homeHeight = home.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+   home.style.opacity=1-window.scrollY/homeHeight;
+   console.log(1-window.scrollY/homeHeight)
+});
