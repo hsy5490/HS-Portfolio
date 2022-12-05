@@ -12,6 +12,7 @@ document.addEventListener('scroll', () => {
         navbar.classList.remove('navbar--dark');
     }
 });
+
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({ behavior: 'smooth' });
@@ -56,4 +57,28 @@ document.querySelector(".top").addEventListener("click", (e) => {
         behavior: "smooth"
     });
 });
+
+// work tap menu
+const category = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+category.addEventListener('click', (e) => {
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if (filter === null) {
+        return;
+    }
+    
+    // Remove selection from the previous item and
+    const active =document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    e.target.classList.add('selected');
+
+    projects.forEach((project) => {
+        if (filter === '*' || filter === project.dataset.type) {
+            project.classList.remove('invisible');
+        } else {
+            project.classList.add('invisible')
+        }
+    })
+})
 

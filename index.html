@@ -169,34 +169,27 @@
             <h1>My Work</h1>
             <h3>Projects</h3>
             <div class="work__categories">
-                <button class="category__btn active">All <span class="category__count">6</span></button>
-                <button class="category__btn">Respon <span class="category__count">2</span></button>
-                <button class="category__btn">PC <span class="category__count">3</span></button>
-                <button class="category__btn">Mobile <span class="category__count">1</span></button>
+                <button class="category__btn selected" data-filter="*">All</button>
+                <button class="category__btn" data-filter="respon">Respon</button>
+                <button class="category__btn" data-filter="pc">PC</button>
+                <button class="category__btn" data-filter="mobile">Mobile</button>
             </div>
             <div class="work__projects">
-                <a href="#" class="project">
-                    <img class="project__img" src="./images/projects/G-ide.png" alt="">
+                <a href="#" class="project" data-type="respon">
+                    <img class="project__img" src="./images/projects/G-ide.png" alt="" >
                     <div class="project__description">
                         <h3>HS's About Me</h3>
                         <span>HTML, CSS with<br> media query</span>
                     </div>
                 </a>
-                <a href="https://github.com/hsy5490/Locoste_responsive" class="project" target="_blank">
+                <a href="https://github.com/hsy5490/Locoste_responsive" class="project" target="_blank" data-type="respon">
                     <img class="project__img" src="./images/projects/G-ide.png" alt="">
                     <div class="project__description">
                         <h3>Locoste Responsive</h3>
                         <span>HTML, CSS with <br>media query</span>
                     </div>
                 </a>
-                <!-- <a href="https://github.com/hsy5490/G-IDE-responsive" class="project" target="_blank">
-                    <img class="project__img" src="./images/projects/G-ide.png" alt="">
-                    <div class="project__description">
-                        <h3>G-IDLE's-responsive</h3>
-                        <span>HTML, CSS with<br> media query</span>
-                    </div>
-                </a> -->
-                <a href="http://hs5490.dothome.co.kr/ui/momstouch_main.html" class="project" target="_blank">
+                <a href="http://hs5490.dothome.co.kr/ui/momstouch_main.html" class="project" target="_blank" data-type="pc">
                     <img class="project__img" src="./images/projects/moms mockup.png" alt="">
                     <div class="project__description">
                         <h3>Mom's touch PC</h3>
@@ -204,21 +197,21 @@
                             (imgae 첨부, not coded)</span>
                     </div>
                 </a>
-                <a href="https://hsy5490.github.io/cello_float/" class="project" target="_blank">
+                <a href="https://hsy5490.github.io/cello_float/" class="project" target="_blank" data-type="pc">
                     <img class="project__img" src="./images/projects/float_ppt.png" alt="">
                     <div class="project__description">
                         <h3>Cello PC</h3>
                         <span>float to coded</span>
                     </div>
                 </a>
-                <a href="https://hsy5490.github.io/AHTE_flex/" class="project" target="_blank">
+                <a href="https://hsy5490.github.io/AHTE_flex/" class="project" target="_blank" data-type="pc">
                     <img class="project__img" src="./images/projects/200_ppt.png" alt="">
                     <div class="project__description">
                         <h3>Athe PC</h3>
                         <span>flex to coded</span>
                     </div>
                 </a>
-                <a href="https://github.com/hsy5490/dreamcoding-portfolio" class="project" target="_blank">
+                <a href="https://github.com/hsy5490/dreamcoding-portfolio" class="project" target="_blank" data-type="mobile">
                     <img class="project__img" src="./images/projects/airbnb.png" alt="">
                     <div class="project__description">
                         <h3>Airbnb Mobile</h3>
@@ -228,24 +221,6 @@
             </div>
         </div>
     </section>
-    <!-- Testmonials -->
-    <!-- <section id="testmonials" class="section">
-        <div class="section__container">
-            <h1>Testmonials</h1>
-            <h3>See what they say about me</h3>
-            <div class="testmonials">
-                <div class="testmonial">
-                    <img src="./images/people1_12942eb352.jpg" alt="people1" class="testmonial__avatar">
-                    <div class="testmonial__speech-bubble">
-                        <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        </p>
-                        <p class="name"><a href="#">Ellie</a> / Student</p>
-                    </div>
-                </div>
-            </div>
-    </section> -->
-    </div>
     <!-- contact -->
     <section id="contact" class="section">
         <h1 class="contact__title">Let's talk</h1>
