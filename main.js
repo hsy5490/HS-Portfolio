@@ -1,16 +1,14 @@
 'use strict';
 
 //Make Nvabr transparent when it is on the top
-const navbar = document.querySelector("#navbar");
+const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-    // console.log(window.scrollY)
-    // console.log(`navbarHeight:${navbarHeight}`)
-    if (window.scrollY > navbarHeight) {
-        navbar.classList.add('navbar--dark')
-    } else {
-        navbar.classList.remove('navbar--dark');
-    }
+  if (window.scrollY > navbarHeight) {
+    navbar.classList.add('navbar--dark');
+  } else {
+    navbar.classList.remove('navbar--dark');
+  }
 });
 
 function scrollIntoView(selector) {
@@ -27,11 +25,15 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
 
-    // console.log(event.target.dataset.link);
-    // const scrollTo = document.querySelector(link);
-    // scrollTo.scrollIntoView({behavior: "smooth" });
+    navbarMenu.classList.remove('open')
     scrollIntoView(link);
 
+})
+
+// Navbar toggle button
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener('click', () => {
+navbarMenu.classList.toggle('open');
 })
 
 const button = document.querySelector(".home__contact");
@@ -67,9 +69,9 @@ category.addEventListener('click', (e) => {
     if (filter === null) {
         return;
     }
-    
+
     // Remove selection from the previous item and
-    const active =document.querySelector('.category__btn.selected');
+    const active = document.querySelector('.category__btn.selected');
     active.classList.remove('selected');
     e.target.classList.add('selected');
 
@@ -81,4 +83,5 @@ category.addEventListener('click', (e) => {
         }
     })
 })
+
 

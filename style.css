@@ -1,7 +1,8 @@
 /* global */
-html{
+html {
   scroll-behavior: smooth;
 }
+
 :root {
   /* Color */
   --color-white: #ffffff;
@@ -67,6 +68,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* Typography */
@@ -127,16 +129,16 @@ p {
   font-weight: var(--weight-semi-bold);
 }
 
+.navbar__menu {
+  display: flex;
+}
+
 .navbar_menu_item {
   padding: 8px 12px;
   margin: 0 4px;
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-boder-radius);
-}
-
-input {
-  display: none;
 }
 
 .navbar_menu_item:hover {
@@ -146,8 +148,10 @@ input {
 
 .navbar__toggle-btn {
   position: absolute;
-  right: 32px;
   top: 16px;
+  right: 16px;
+  font-size: 24px;
+  color: var(--color-white);
   display: none;
 }
 
@@ -158,6 +162,7 @@ input {
   padding-top: 100px;
   text-align: center;
 }
+
 .home__avatar {
   width: 250px;
   height: 250px;
@@ -178,6 +183,10 @@ input {
   padding: 8px 12px;
   border: 2px solid white;
   border-radius: var(--size-boder-radius);
+}
+
+.home__contact:hover {
+  background-color: var(--color-pink);
 }
 
 /* section common */
@@ -359,11 +368,11 @@ input {
   background-color: var(--color-light-white);
 }
 
-.project.invisible{
+.project.invisible {
   display: none;
 }
 
-.project.invisible{
+.project.invisible {
   display: none;
 }
 
@@ -406,47 +415,13 @@ input {
   display: block;
   position: relative;
   left: 50%;
-  width: 25px;
+  width: 50px;
   height: 2px;
+  transform: translateX(-50%);
   margin-left: -12px;
   margin-top: 8px;
   background-color: var(--color-dark-white);
 }
-
-/* Testiomonial */
-/* #testmonials {
-  background-color: var(--color-light-white);
-}
-
-.testmonials {
-  margin: 40px;
-}
-
-.testmonial {
-  display: flex;
-  margin: 32px 0;
-}
-
-.testmonial__avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-right: 40px;
-}
-
-.testmonial__speech-bubble {
-  padding: 18px;
-  background-color: var(--color-white);
-  border-radius: var(--size-boder-radius);
-}
-
-.testmonial__speech-bubble p {
-  color: var(--color-light-grey);
-}
-
-.testmonial__speech-bubble a {
-  color: var(--color-orange);
-} */
 
 /* contact */
 #contact {
@@ -481,8 +456,8 @@ input {
   width: 50px;
   height: 50px;
   position: fixed;
-  right: 25px;
-  bottom: 25px;
+  right: 15px;
+  bottom: 15px;
   background-color: var(--color-black);
   text-align: center;
   line-height: 50px;
@@ -501,124 +476,53 @@ input {
   margin: auto;
 }
 
-/* For below 768px screen width */
 @media screen and (max-width:1023px) {
-  .navbar__toggle-btn {
-    display: block;
-  }
 
+  :root {
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-orange);
+    padding: 10px;
+  }
+  .navbar_logo{
+    margin-top: 6px;
   }
   .navbar_menu {
     flex-direction: column;
     text-align: center;
     width: 100%;
-    /* display: none; */
-  }
-  /* Hamberger Toggle*/
-  .navbar__toggle-btn {
-    width: 30px;
-    margin-top: 5px;
-    position: fixed;
-    z-index: 90;
-
-  }
-
-  /* A. 햄버거메뉴 그리기 */
-  input[id="menuicon"] {
     display: none;
   }
-
-  input[id="menuicon"]+label {
+  .navbar_menu.open{
     display: block;
-    width: 56px;
-    height: 60px;
-    cursor: pointer;
-    /* position: fixed; */
-    right: 0;
-    top: 0;
-    z-index: 90;
 
   }
-
-  input[id="menuicon"]+label span {
+  /* Hamberger Toggle*/
+  .navbar__toggle-btn{
     display: block;
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    /* 포지션 */
-    position: fixed;
-    z-index: 90;
-    transition: all 0.3s;
-  }
-
-  .navbar__toggle-btn {
-    transition: all 0.3s ease-in-out;
-  }
-
-  .navbar__toggle-btn span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-  }
-
-  input[id="menuicon"]+label span:nth-child(1) {
-    right: 16px;
+    position: absolute;
     top: 16px;
-  }
-
-  input[id="menuicon"]+label span:nth-child(2) {
     right: 16px;
-    top: 24px;
-    /* margin: 2px 0; */
+    font-size: var(--font-medium);
+    margin-bottom: 60px;
   }
-
-  input[id="menuicon"]+label span:nth-child(3) {
-    right: 16px;
-    top: 32px;
-  }
-
-  input[id="menuicon"]:checked+label span:nth-child(1) {
-    top: 34px;
-    background-color: #000000;
-    transform: translateY(-40%) rotate(45deg);
-  }
-
-  input[id="menuicon"]:checked+label span:nth-child(2) {
-    opacity: 0;
-  }
-
-  input[id="menuicon"]:checked+label span:nth-child(3) {
-    top: 32px;
-    background-color: #000000;
-    transform: translateY(40%) rotate(-45deg);
-  }
-
-  /* C. GNB 메뉴 슬라이딩 효과 */
-  .navbar__toggle-btn+.navbar_menu {
-    width: 200px;
-    height: 100%;
-    background: var(--color-white);
-    color: #000000;
-    /* 포지션 */
-    position: fixed;
-    right: -258px;
-    top: 0;
-    z-index: 89;
-    transition: all 0.3s;
-    padding-top: 70px;
-    margin-top: -16px;
-  }
-
-  #menuicon:checked+label+ul {
-    right: 0;
+  .navbar__toggle-btn i{
+    margin-bottom: 5px;
   }
 
   .navbar_menu_item.active {
     border: none;
+  }
+
+  .section {
+    padding: 32px;
   }
 
   .section__container {
@@ -671,10 +575,23 @@ input {
     width: 50px;
     height: 50px;
   }
+
+  .top{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 10px;
+  }
 }
 
 
 @media screen and (max-width:767px) {
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .work__categories {
     display: flex;
     flex-flow: row nowrap;
@@ -705,14 +622,5 @@ input {
   .project:last-child {
     width: 100%;
     /* flex-grow: 1; */
-  }
-
-  .testmonial__speech-bubble {
-    padding: 0 40px;
-    width: 100%;
-  }
-
-  .testmonial__speech-bubble p {
-    font-size: var(--font-micro);
   }
 }
