@@ -4,11 +4,11 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-  if (window.scrollY > navbarHeight) {
-    navbar.classList.add('navbar--dark');
-  } else {
-    navbar.classList.remove('navbar--dark');
-  }
+    if (window.scrollY > navbarHeight) {
+        navbar.classList.add('navbar--dark');
+    } else {
+        navbar.classList.remove('navbar--dark');
+    }
 });
 
 function scrollIntoView(selector) {
@@ -33,7 +33,7 @@ navbarMenu.addEventListener('click', (event) => {
 // Navbar toggle button
 const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
 navbarToggleBtn.addEventListener('click', () => {
-navbarMenu.classList.toggle('open');
+    navbarMenu.classList.toggle('open');
 })
 
 const button = document.querySelector(".home__contact");
@@ -84,4 +84,25 @@ category.addEventListener('click', (e) => {
     })
 })
 
+// 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다
+// IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
+// 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
 
+const selectionIds = ['#home', '#about', '#skills', '#work', '#testmonials', "#contact"];
+const sections = selectionIds.map(id => document.querySelector(id));
+const navitems = selectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
+console.log(sections)
+
+const observerOptions={
+    root:null,
+    rootMargin:'0px',
+    threshold:0.3,
+}
+
+const observerCallback=(entires,observer)=>{
+    entires.forEach(entry=>{
+        
+    });
+}
+const observer=new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section=>observer.observe(section));
