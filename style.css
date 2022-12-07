@@ -418,7 +418,7 @@ p {
   content: "";
   display: block;
   position: relative;
-  left: 50%;
+  left: 52%;
   width: 50px;
   height: 2px;
   transform: translateX(-50%);
